@@ -33,8 +33,6 @@ func (server *Server) createAccount(ctx *gin.Context) {
 	}
 
 	ctx.JSON(http.StatusOK, account) 
-
-
 }
 
 type getAccountRequest struct {
@@ -57,7 +55,7 @@ func (server *Server) getAccount(ctx *gin.Context) {
 		}
 		return
 	}
-
+	
 	ctx.JSON(http.StatusOK, account)
 }
 
@@ -81,5 +79,6 @@ func (server *Server) listAccount(ctx *gin.Context) {
 		ctx.JSON(http.StatusInternalServerError, errorResponse(err))
 		return
 	}
+	
 	ctx.JSON(http.StatusOK, accounts)
 }
